@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyStudio - Product Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-container" id="auth-container">
+        <h1>SkyStudio</h1>
+        <div class="auth-form">
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <button id="login-btn">Login</button>
+            <button id="signup-btn">Sign Up</button>
+        </div>
+    </div>
+
+    <div class="app-container" id="app-container" style="display:none;">
+        <header>
+            <h1>SkyStudio</h1>
+            <button id="logout-btn">Logout</button>
+        </header>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="ai-tab">SkyAI Agent</button>
+            <button class="tab-btn" data-tab="manager-tab">Product Manager</button>
+        </div>
+        
+        <div class="tab-content active" id="ai-tab">
+            <div class="ai-chat-container">
+                <div class="ai-messages" id="ai-messages"></div>
+                <div class="ai-input">
+                    <input type="text" id="ai-prompt" placeholder="Ask SkyAI to manage your products...">
+                    <button id="ai-submit">Send</button>
+                    <button id="ai-voice">🎤</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="manager-tab">
+            <div class="product-actions">
+                <button id="add-product-btn">Add Product</button>
+                <button id="backup-products-btn">Backup All</button>
+            </div>
+            <div class="product-list" id="product-list"></div>
+            
+            <div class="product-modal" id="product-modal" style="display:none;">
+                <div class="modal-content">
+                    <h2 id="modal-title">Add New Product</h2>
+                    <input type="text" id="product-name" placeholder="Product Name">
+                    <input type="number" id="product-price" placeholder="Price">
+                    <input type="number" id="product-quantity" placeholder="Quantity">
+                    <textarea id="product-description" placeholder="Description"></textarea>
+                    <div class="modal-buttons">
+                        <button id="save-product-btn">Save</button>
+                        <button id="cancel-product-btn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
